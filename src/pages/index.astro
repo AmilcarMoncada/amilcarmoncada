@@ -10,6 +10,8 @@ import SectionContainer from "../components/SectionContainer.astro"
 import Hero from "../components/Hero.astro"
 import TitleSection from "../components/TitleSection.astro"
 import "../styles/global.css";
+import Church from "../components/icons/Church.astro"
+import AboutMe2 from "../components/AboutMe2.astro"
 ---
 
 
@@ -32,6 +34,14 @@ import "../styles/global.css";
           Sobre mí
         </TitleSection>
         <AboutMe />
+      </SectionContainer>
+
+      <SectionContainer id="pasiones-y-Fortalezas">
+        <TitleSection>
+          <Church class="size-8" />
+          Pasiones y Fortalezas
+        </TitleSection>
+        <AboutMe2 />
       </SectionContainer>
     
       <SectionContainer id="experiencia">
