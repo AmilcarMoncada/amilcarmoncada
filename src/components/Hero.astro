@@ -1,0 +1,54 @@
+---
+const personalImageAlt = "Amilcar Moncada"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import MailIcon from "../components/icons/Mail.astro"
+import SocialPill from "../components/SocialPill.astro"
+import GitHub from "./icons/GitHub.astro"
+---
+
+<div class="max-w-m">
+  <div class="flex gap-16 mb-8 mediaport">
+    <img
+      class="rounded-full shadow-lg size-70"
+      src="/images/foto.jpeg"
+      alt={personalImageAlt}
+    />
+    <a
+    >
+    <p class="text-6xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+      ¡Hola! Soy Amílcar
+    </p>
+      <p
+  class="mt-10 text-3xl dark:text-yellow-200 text-yellow-500 font-semibold dark:text-gray-300"
+>
+  Entusiasta del Desarrollo Web
+</p>
+<p
+class="mt-8 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+>
+Cada proyecto para mí se convierte en una experiencia llena de emociones, permitiéndome así <strong>solucionar problemas</strong>
+y dar respuesta a cada una de las <strong>necesidades del negocio</strong>, demostrando la <strong>calidad</strong> y la <strong>pasión</strong> de mi trabajo. 
+</p>
+    </a>
+  </div>
+ 
+  <nav class="flex flex-wrap gap-10 mt-4">
+    <SocialPill href="https://github.com/AmilcarMoncada">
+      <GitHub class="size-6" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/amilcarmoncada/">
+      <LinkedInIcon class="size-6" />
+      LinkedIn
+    </SocialPill>
+  </nav>
+</div>
+
+<style>
+@media (max-width: 725px)  {
+  .mediaport{
+    flex-direction: column;
+   }
+}
+
+</style>
