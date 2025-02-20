@@ -1,0 +1,41 @@
+---
+import type { Skills } from '../interfaces/Interface'
+import TitleSection from "../components/TitleSection.astro"
+import CodeIcon from "../components/icons/Code.astro"
+
+interface Props {
+    name: string
+    skills: Skills
+}
+
+const { name,skills } = Astro.props;
+---
+<section id="skills" class="mb-12">
+
+    <h2 class="text-2xl font-bold mb-6">{name}</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        {Object.entries(skills).map(([c, s]) => (
+            <div class="bg-card rounded-lg p-3 shadow">
+                <h3 class="text-2xl font-semibold mb-5">{c}</h3>
+                <div class="space-y-3">
+                {
+                    s
+                    .slice() 
+                    .sort((a, b) => b.level - a.level) 
+                    .map((skill, index) => (
+                            <div class="flex justify-between mb-1">
+                                <span class="text-s text-pretty order-2 md:order-1">{skill.name}</span>
+                                <span class="text-s text-pretty">{skill.level}%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5 mt-1">
+                                <div class="bg-red-600 h-2.5 rounded-full" style={`width: ${skill.level}%`}></div>
+                            </div>
+                    ))
+                }
+                </div>
+            </div>
+        ))}
+    </div>
+</section>

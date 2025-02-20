@@ -4,15 +4,14 @@ import AboutMe from "../components/AboutMe.astro"
 import Briefcase from "../components/icons/Briefcase.astro"
 import CodeIcon from "../components/icons/Code.astro"
 import Experience from "../components/Experience.astro"
-import ProfileCheck from "../components/icons/ProfileCheck.astro"
 import Projects from "../components/Projects.astro"
+import Skills from "../components/Skills.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import Hero from "../components/Hero.astro"
 import TitleSection from "../components/TitleSection.astro"
 import "../styles/global.css";
-import Church from "../components/icons/Church.astro"
 
-import { info } from '../content/data/db'
+import { info, skills } from '../content/data/db'
 ---
 
 
@@ -21,12 +20,13 @@ import { info } from '../content/data/db'
   description="Portafolio profesional, ademas de ser un proyecto de la clase de Sistemas Expertos"
 >
   <main class="px-4">
-    <SectionContainer class=" md:py-28">
+    <SectionContainer id="Inicio" class=" md:py-28">
       <Hero>
       </slot>
     </Hero>
     </SectionContainer>
 
+    <SectionContainer id="sobre-mi">
     <div class="space-y-24">
       {
         info.map((card, index) => (
@@ -38,7 +38,7 @@ import { info } from '../content/data/db'
           />
         ))
       }
-
+      </SectionContainer>
     
       <SectionContainer id="experiencia">
         <TitleSection>
@@ -54,6 +54,18 @@ import { info } from '../content/data/db'
           Proyectos
         </TitleSection>
         <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="habilidades">
+        <TitleSection>
+        <CodeIcon class="size-8" />
+        Habilidades
+      </TitleSection>
+        <Skills 
+        name=""
+        skills={skills}
+      />
+
       </SectionContainer>
 
   </div>
