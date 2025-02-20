@@ -25,8 +25,13 @@ interface Skill {
     level: number;
 }
 
+interface CategorySkills {
+    skills: Skill[];
+    color: string;
+}
+
 export interface Skills {
-    [categoria: string]: Skill[];
+    [categoria: string]: CategorySkills;
 }
 
 export interface WorkExperienceItem {

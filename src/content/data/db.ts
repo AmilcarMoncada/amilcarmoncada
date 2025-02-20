@@ -64,14 +64,18 @@ export const cards: CardIndexProps[] = [
 ]
 
 export const skills: Skills = {
-    Frontend: [
+    Frontend: {
+      skills: [
         { name: "TypeScript", level: 50 },
         { name: "JavaScript", level: 45 },
         { name: "React", level: 40 },
         { name: "Vuejs", level: 40 },
         { name: "Next.js", level: 30 },
     ],
-    Backend: [
+    color: "orange-500",
+  },
+    Backend:{ 
+      skills:[
         { name: "Java", level: 55 },
         { name: "PHP", level: 50 },
         { name: "Python", level: 50 },
@@ -80,19 +84,20 @@ export const skills: Skills = {
         { name: "Express", level: 45 },
         { name: "Laravel", level: 45 },
         { name: "C++", level: 40 },
-    ],
-    Databases: [
+      ],
+      color: "blue-500",
+    },
+    Databases:{ 
+      skills:[
       { name: "Oracle Database", level: 50 },
       { name: "PostgreSQL", level: 50 },
       { name: "Microsoft SQL Server", level: 45 },
       { name: "MySQL", level: 45 },
       { name: "Data Warehouse", level: 35 }
-    ]
+    ],
+    color: "orange-500",
+  }
 }
-
-
-
-/** NAVBAR */
 
 export const navItems: ItemProps[] = [
     { titleEs: 'Sobre Mí', titleEn: 'About Me', href: '/' },
