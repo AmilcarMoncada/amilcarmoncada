@@ -27,8 +27,8 @@ const { name, skills } = Astro.props;
                                 <span class="text-s text-pretty font-semibold order-2 md:order-1">{skill.name}</span>
                                 <span class="text-s text-pretty">{skill.level}%</span>
                             </div>
-                            <div class="w-full bg-gray-300 rounded-full h-2.5 mt-1">
-                                <div class={`bg-${s.color} h-2.5 rounded-full`} style={`width: ${skill.level}%`}></div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-800 rounded-full h-2.5 mt-1">
+                                <div class={`${s.color} dark:${s.color} h-2.5 rounded-full`} style={`width: ${skill.level}%`}></div>
                             </div>
                     ))
                 }

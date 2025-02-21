@@ -1,4 +1,7 @@
-import type  { InfoProps, CardIndexProps, ItemProps, Skills, WorkExperienceItem } from '../../interfaces/Interface';
+import NextJS from "../../components/icons/NextJS.astro"
+import Tailwind from "../../components/icons/Tailwind.astro"
+import type  { Proyects, InfoProps, CardIndexProps, ItemProps, Skills, WorkExperienceItem, Tags } from '../../interfaces/Interface';
+
 export const info: InfoProps[] = [
     {
       title: 'Sobre mi',
@@ -72,7 +75,7 @@ export const skills: Skills = {
         { name: "Vuejs", level: 40 },
         { name: "Next.js", level: 30 },
     ],
-    color: "orange-500",
+    color: "bg-orange-500",
   },
     Backend:{ 
       skills:[
@@ -85,7 +88,7 @@ export const skills: Skills = {
         { name: "Laravel", level: 45 },
         { name: "C++", level: 40 },
       ],
-      color: "blue-500",
+      color: "bg-blue-500",
     },
     Databases:{ 
       skills:[
@@ -95,7 +98,7 @@ export const skills: Skills = {
       { name: "MySQL", level: 45 },
       { name: "Data Warehouse", level: 35 }
     ],
-    color: "orange-500",
+    color: "bg-green-500",
   }
 }
 
@@ -117,46 +120,36 @@ export const navItems: ItemProps[] = [
     { titleEs: 'Experiencia Laboral', titleEn: 'Work Experience', href: '/workexperience' },
 ];
 
-/** WORK EXPERIENCE */
+export const TAGS: Tags[] = [{
 
-export const experiences: WorkExperienceItem[] = [
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+}];
+
+
+export const PROJECTS: Proyects[] = [{
+
+    title: "SVGL - A beautiful library with SVG logos",
+    description:
+      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/svgl.webp",
+    tags: [TAGS.]
+  },
   {
-    title: "Lider Técnico de BI",
-    titleEN: "BI Team Lead",
-    company: "Edusoft",
-    period: "2023 - Presente",
-    description: [
-      "Gestionar las cargas de trabajo y los recursos del equipo de BI.",
-      "Cooperar en la implementación de la lakehouse.",
-      "Analizar e implementar la gobernanza de datos.",
-      "Desarrollar y mantener los pipelines de datos.",
-      "Analizar diferentes soluciones basadas en datos para entender los estilos de aprendizaje de los estudiantes.",
-    ],
-    descriptionEN: [
-      "Manage workloads and resources for the BI team.",
-      "Cooparete implementing the lakehouse.",
-      "Analyse and implement the data governance.",
-      "Develop and maintain the data pipelines.",
-      "Analyze different data-driven solutions to understand student learning styles.",
-    ],
-    technologies: ["Python", "Azure", "Databricks", "DataLake", "PySpark", "LlamaIndex"],
-  },{
-    title: "Arquitecto de datos",
-    titleEN: "Data Architect",
-    company: "Analytikus",
-    period: "2021 - 2023",
-    description: [
-      "Diseñar y mantener la arquitectura de datos en Azure.",
-      "Implementar Modelos estadisticos para predecir deserción estudiantil.",
-      "Implementar Modelos estadisticos para priorizar potenciales estudiantes a matricular.",
-      "Emplementar Bot para atender a los estudiantes mediante el uso de ChatGPT dentro Microsoft Teams.",
-    ],
-    descriptionEN: [
-      "Design and maintain the data architecture in Azure.",
-      "Implement statistical models to predict student dropout.",
-      "Implement statistical models to prioritize potential students to enroll.",
-      "Implement Bot to assist students using ChatGPT within Microsoft Teams.",
-    ],
-    technologies: ["Python", "Azure", "Databricks", "DataLake", "PySpark", "Synapse", "BotFramework", "MongoBD"],
-  }
-];
+    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    description:
+      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+    link: "https://adventjs.dev",
+    image: "/projects/adventjs.webp",
+    tags: [TAGS.],
+  }];

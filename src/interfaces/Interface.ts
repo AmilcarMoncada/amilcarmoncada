@@ -34,6 +34,34 @@ export interface Skills {
     [categoria: string]: CategorySkills;
 }
 
+export interface Experience {
+    title: string
+    company: string
+    description: string
+    link?: string
+    date: string
+  }
+
+interface tag {
+    name: string
+    class: string
+    icon: any
+
+}
+
+export interface Tags  {
+    [name: string]: tag;
+}
+
+export interface Proyects {
+    title: string
+    description: string
+    link: string
+    github?: string
+    image: string
+    tags: Tags[]
+}
+
 export interface WorkExperienceItem {
     title: string;
     titleEN: string;
