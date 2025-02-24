@@ -14,8 +14,8 @@ const { href, title, icon, description } = Astro.props
 >
   <div class="relative md:col-span-2">
 
-      <span class="text-yellow-400 -left-[44px] absolute rounded-full text-5xl">&bull;</span>
-      <p class="text-xl font-bold text-yellow-400"><a href={href}>{title}</a></p>
+      <span class="text-blue-500 dark:text-yellow-400 -left-[44px] absolute rounded-full text-5xl">&bull;</span>
+      <p class="text-xl font-bold text-blue-400 dark:text-yellow-400"><a href={href}>{title}</a></p>
       <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl 
       overflow-hidden rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-lg lg:hover:bg-gray-800/50">
     <a href={href}><img class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-50 md:group-hover:scale-75" src={icon} /></a>

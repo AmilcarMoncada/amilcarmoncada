@@ -27,7 +27,7 @@ const { Content, headings } = await entry.render();
     <h1 class="flex items-center mb-12 text-4xl font-semibold gap-x-4 text-black/80 dark:text-white">{entry.data.title}</h1>
     <p class="mt-8 text-xl text-gray-800 dark:text-gray-300 mb-8" set:html={entry.data.description}></p>
 
-    <nav class="mb-12 bg-gray-900 p-4 rounded-xl">
+    <nav class="mb-12 dark:bg-gray-900 bg-gray-300 p-4 rounded-xl">
       <p class="flex dark:text-yellow-300 items-center mb-4 text-3xl font-semibold gap-x-4 font-mono">Información</p>
       <ul class="space-y-2">
         {headings.map((heading: any) => (
