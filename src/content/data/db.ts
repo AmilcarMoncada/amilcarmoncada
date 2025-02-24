@@ -120,7 +120,7 @@ export const Items: ModulosProps[] = [
   ,  {
     title: "Experiencia",
     label: "experiencia",
-    url: "/experience",
+    url: "/experiencia",
   }
 ];
 
