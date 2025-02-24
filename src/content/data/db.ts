@@ -1,6 +1,24 @@
 import NextJS from "../../components/icons/NextJS.astro"
 import Tailwind from "../../components/icons/Tailwind.astro"
-import type  { Proyects, InfoProps, CardIndexProps, ItemProps, Skills, WorkExperienceItem, Tags } from '../../interfaces/Interface';
+import Laravel from "../../components/icons/Laravel.astro"
+import Supabase from "../../components/icons/Supabase.astro"
+import React from "../../components/icons/React.astro"
+import Typescript from "../../components/icons/Typescript.astro"
+import Express from "../../components/icons/Express.astro"
+import Node from "../../components/icons/node.astro"
+import Spring from "../../components/icons/Spring.astro"
+import MySQL from "../../components/icons/Mysql.astro"
+import Php from "../../components/icons/Php.astro"
+import Java from "../../components/icons/Java.astro"
+import Pandas from "../../components/icons/Pandas.astro"
+import Learn from "../../components/icons/Learn.astro"
+import Python from "../../components/icons/Python.astro"
+import Numpy from "../../components/icons/Numpy.astro"
+import WhatsApp from "../../components/icons/Whats.astro"
+import LinkedIn from "../../components/icons/LinkedIn.astro"
+import GitHub from "../../components/icons/GitHub.astro"
+import type  { Projects, InfoProps, Skills, Tags, ModulosProps, FooterProps} from '../../interfaces/Interface';
+import Javascript from "../../components/icons/Javascript.astro"
 
 export const info: InfoProps[] = [
     {
@@ -45,34 +63,14 @@ export const info: InfoProps[] = [
     }
 ];
 
-export const cards: CardIndexProps[] = [
-    {
-      title: 'Sobre Mí',
-      title_en: 'About Me',
-      description: `🌐 Profesional de TI hondureño con más de <span class="font-semibold text-orange-600">15 años de experiencia</span> alineando las tecnologías de la información con los objetivos estratégicos de las organizaciones. Especializado en <span class="font-semibold text-orange-600">EdTech</span>, implementando soluciones de software educativo que se adaptan óptimamente a las necesidades del negocio, contribuyendo al crecimiento 📈 y eficiencia empresarial ⚙️.`,
-      description_en: `🌐 Honduran IT professional with over <span class="font-semibold text-orange-600">15 years of experience</span> aligning information technology with organizations' strategic objectives. Specializing in <span class="font-semibold text-orange-600">EdTech</span>, implementing educational software solutions that optimally fit business needs, contributing to growth 📈 and operational efficiency ⚙️.`
-    },
-    {
-      title: 'Trayectoria Profesional',
-      title_en: 'Professional Journey',
-      description: `Desde <span class="font-semibold text-orange-600">desarrollador web</span> 💻 hasta <span class="font-semibold text-orange-600">gerente de equipos de ciencia de datos</span> 📊, mi enfoque ha sido mejorar la <span class="font-semibold text-orange-600">gobernanza de datos</span> 🔐. Esto incluye desde la recolección de datos 📥 hasta el análisis 🔎 y la compartición de métricas relevantes para el negocio 📊.`,
-      description_en: `From <span class="font-semibold text-orange-600">web developer</span> 💻 to <span class="font-semibold text-orange-600">manager of data science teams</span> 📊, my focus has been on improving <span class="font-semibold text-orange-600">data governance</span> 🔐. This includes everything from data collection 📥 to analysis 🔎 and sharing business-relevant metrics 📊.`
-    },
-    {
-      title: 'Entusiasta del Café',
-      title_en: 'Coffee Enthusiast',
-      description: `☕ Apasionado del café, sueño con participar en campeonatos 🏆 para mostrar los <span class="font-semibold text-orange-600">granos de especialidad</span> 🌱 de Honduras 🇭🇳. Me encanta experimentar con diferentes métodos de preparación 🧪 y compartir deliciosas tazas de café con mis seres queridos ❤️.`,
-      description_en: `☕ Passionate about coffee, I dream of participating in championships 🏆 to showcase the <span class="font-semibold text-orange-600">specialty beans</span> 🌱 from Honduras 🇭🇳. I love experimenting with different brewing methods 🧪 and sharing delicious cups of coffee with loved ones ❤️.`
-    }
-]
 
 export const skills: Skills = {
     Frontend: {
       skills: [
         { name: "TypeScript", level: 50 },
         { name: "JavaScript", level: 45 },
-        { name: "React", level: 40 },
-        { name: "Vuejs", level: 40 },
+        { name: "React", level: 35 },
+        { name: "Vuejs", level: 30 },
         { name: "Next.js", level: 30 },
     ],
     color: "bg-orange-500",
@@ -83,10 +81,10 @@ export const skills: Skills = {
         { name: "PHP", level: 50 },
         { name: "Python", level: 50 },
         { name: "TypeScript", level: 50 },
-        { name: "SpringBoot", level: 50 },
+        { name: "SpringBoot", level: 45 },
         { name: "Express", level: 45 },
         { name: "Laravel", level: 45 },
-        { name: "C++", level: 40 },
+        { name: "C++", level: 30 },
       ],
       color: "bg-blue-500",
     },
@@ -94,34 +92,40 @@ export const skills: Skills = {
       skills:[
       { name: "Oracle Database", level: 50 },
       { name: "PostgreSQL", level: 50 },
-      { name: "Microsoft SQL Server", level: 45 },
-      { name: "MySQL", level: 45 },
-      { name: "Data Warehouse", level: 35 }
+      { name: "Microsoft SQL Server", level: 35 },
+      { name: "MySQL", level: 40 },
+      { name: "Data Warehouse", level: 30 }
     ],
     color: "bg-green-500",
   }
 }
 
-export const navItems: ItemProps[] = [
-    { titleEs: 'Sobre Mí', titleEn: 'About Me', href: '/' },
+
+export const Items: ModulosProps[] = [
+  {
+    title: "Inicio",
+    label: "Inicio",
+    url: "/",
+  },
+  {
+    title: "Habilidades",
+    label: "Habilidades",
+    url: "/habilidades",
+  },
     {
-      titleEs: 'Proyectos', 
-      titleEn: 'Projects',
-      href: '/projects',
-      subitems: [
-        { titleEs: 'ML', titleEn: 'ML', href: '/projects/machine-learning' },
-        { titleEs: 'Integración de Apps RAG', titleEn: 'RAG Apps Integration', href: '/projects/rag' },
-        { titleEs: 'Infraestructura Azure', titleEn: 'Azure Infrastructure', href: '/projects/azure' },
-        { titleEs: 'Ingeniería de Datos', titleEn: 'Data Engineering', href: '/projects/data-engineering' },
-        { titleEs: 'Productos Digitales', titleEn: 'Digital Products', href: '/projects/digital-products' },
-        { titleEs: 'LMS y SIS', titleEn: 'LMS and SIS', href: '/projects/lms-sis' },
-      ]
-    },
-    { titleEs: 'Experiencia Laboral', titleEn: 'Work Experience', href: '/workexperience' },
+      title: 'Proyectos',
+      label: 'Proyectos',
+      url: '/proyectos'
+    } 
+  ,  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/experience",
+  }
 ];
 
-export const TAGS: Tags[] = [{
 
+const TAGS: Tags = {
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
@@ -132,24 +136,159 @@ export const TAGS: Tags[] = [{
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-}];
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-black text-white",
+    icon: Laravel,
+  },
+    SUPABASE: {
+      name: "Supabase",
+      class: "bg-black text-white",
+      icon: Supabase,
+    },
+    EXPRESS: {
+      name: "Express",
+      class: "bg-black text-white",
+      icon: Express,
+    },
+    TYPESCRIPT: {
+      name: "TypeScript",
+      class: "bg-black text-white",
+      icon: Typescript,
+    },
+    NODE: {
+      name: "Node.js",
+      class: "bg-black text-white",
+      icon: Node,
+    },
+    REACT: {
+      name: "React",
+      class: "bg-black text-white",
+      icon: React,
+    },
+    JAVA: {
+      name: "Java",
+      class: "bg-black text-white",
+      icon: Java,
+    },
+    SPRING: {
+      name: "SpringBoot",
+      class: "bg-black text-white",
+      icon: Spring,
+    },
+    MYSQL: {
+      name: "MySQL",
+      class: "bg-black text-white",
+      icon: MySQL,
+    },
+    PHP: {
+      name: "PHP",
+      class: "bg-black text-white",
+      icon: Php,
+    },
+    JAVASCRIPT: {
+      name: "JavaScript",
+      class: "bg-black text-white",
+      icon: Javascript,
+    },
+    NUMPY: {
+      name: "Numpy",
+      class: "bg-black text-white",
+      icon: Numpy,
+    },
+    LEARN: {
+      name: "Scikit-Learn",
+      class: "bg-black text-white",
+      icon: Learn,
+    },
+    PYTHON: {
+      name: "Python",
+      class: "bg-black text-white",
+      icon: Python,
+    },
+    PANDAS: {
+      name: "Pandas",
+      class: "bg-black text-white",
+      icon: Pandas,
+    }
+};
 
 
-export const PROJECTS: Proyects[] = [{
-
-    title: "SVGL - A beautiful library with SVG logos",
+export const Proyectos: Projects[] = [
+  
+  {
+    title: "Congreso de Innovación y Tecnologias UNAH 2025",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.]
+      `<p>Plataforma interactiva para los participantes del congreso, 
+      donde pueden registrarse, obtener información sobre el evento, 
+      y consultar sobre las diferentes presentaciones y actividades.</p>
+      <br>
+      <p>Como parte del <strong>backend</strong>, mi responsabilidad fue asegurar que las interacciones
+      con la base de datos fueran rápidas, seguras y escalables,
+      contribuyendo a una experiencia de usuario fluida.</p>`,
+    link: "https://congresoinnovacionunah2025.com/",
+    image: "/images/Congreso.jpg",
+    tags: [TAGS.NODE, TAGS.TYPESCRIPT, TAGS.EXPRESS, TAGS.SUPABASE, TAGS.REACT, TAGS.JAVASCRIPT]
+  },{
+
+    title: "Simulador de Uber",
+    description:  
+    `<p>Aplicación web que replica el funcionamiento básico de una plataforma de transporte similar a <strong>Uber</strong>,  
+    permitiendo a los usuarios solicitar un servicio de transporte, a los conductores recibir solicitudes de viajes  
+    y a los administradores gestionar el sistema, ademas de integrar la <strong>API de Google Maps</strong> para
+    mostrar mapas, calcular rutas y determinar distancias.</p>
+    <br>
+    <p>En este proyecto desempeñe el rol de <strong>Desarrollador Web Full Stack</strong>, permitiéndome desarrollar mis habilidades
+    técnicas e integrar <strong>APIs externas</strong>, lo que seria valioso para
+    roles de desarrollo web en empresas que requieren soluciones escalables e integradas. `
+    ,
+    github: "https://github.com/MoralesGuillermo/SimuladorUber",
+    image: "/images/zorrito.png",
+    tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL]
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Prototipo para la Detección de Fatiga Muscular",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.],
+     `<p>Aplicando <strong>aprendizaje automático y análisis de datos</strong>, a través 
+      la librería <strong>Pandas</strong> para el  procesamiento de datos y <strong>Scikit-learn</strong>
+       para aplicar el modelo de regresión lineal,  a partir de la lectura de <strong>electromiogramas (EMG)</strong>.</p> 
+       <br>
+       
+       <p>Desempeñé el rol de <strong>desarrollador y responsable</strong> del modelo, me encargué de todo el proceso 
+       de recolección y limpieza de datos hasta la <strong>creación y entrenamiento del modelo</strong>.</p>`,
+       github: "https://github.com/dme2002/Modelo_Fatiga_Muscular",
+    image: "/images/coil.png",
+    tags: [TAGS.PYTHON, TAGS.PANDAS, TAGS.LEARN, TAGS.NUMPY]
+  },
+  {
+    title: "Clon Funcional de Pinterest",
+    description:
+     ` <p>El proyecto replica la <strong>experiencia de usuario de Pinterest</strong>, incluyendo funcionalidades clave como la subida de imágenes,
+      categorización, búsquedas y exploración de contenido visual.</p>
+    <br>
+    <p>Fui el desarrollador principal, desde la estructura de la base de datos, implementación de la interfaz de usuario 
+    y la creación de una <strong>API REST con Springboot</strong>.</p>`,
+    github: "https://github.com/AmilcarMoncada/ProyectoPinterestBackend",
+    link: "https://github.com/AmilcarMoncada/ProyectoPinterest-Frontend",
+    image: "/images/Pinterest.png",
+    tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL]
   }];
+
+
+  export const Footerss: FooterProps[] = [
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/amilcarmoncada/',
+      icon: LinkedIn
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/AmilcarMoncada',
+      icon: GitHub
+    },
+    {
+      name: 'WhatsApp',
+      url: 'https://wa.me/+50495808377',
+      icon: WhatsApp
+    }
+];

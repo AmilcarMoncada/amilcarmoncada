@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import TitleSection from '../components/TitleSection.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Experiencia from '../components/icons/Experiencia.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+
+type Experiencia = CollectionEntry<'experiencia'> & { slug: string };
+
+const Experiencias: Experiencia[] = await getCollection('experiencia') as Experiencia[];
+---
+
+<Layout 
+title="Amílcar Moncada - Experiencia"
+description="Experiencia obtenida a lo largo de mi carrera profesional">
+  <main class="px-4">
+
+    <SectionContainer id="experiencia" class="md:py-22">
+        <TitleSection>
+          <Experiencia class="size-9" />
+          Experiencia
+        </TitleSection>
+        <div class="grid gap-6 md:grid-cols-1">
+        {Experiencias.map((experiencia) => (
+          <ExperienceItem
+            title={experiencia.data.title}
+            description={experiencia.data.description}
+            icon={experiencia.data.icon}
+            href={`/experience/${experiencia.slug}`}
+          />
+        ))}
+        </div>
+      </SectionContainer>
+  </main>
+</Layout>

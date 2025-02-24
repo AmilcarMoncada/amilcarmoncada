@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+h1 { @apply mt-12 mb-6 text-4xl dark:text-yellow-100 text-yellow-500 font-bold dark:text-gray-300; }
+h2 { @apply mt-10 mb-4 text-3xl dark:text-yellow-200 text-yellow-500 font-bold dark:text-gray-300; }
+h3 { @apply mt-6 mb-2 text-2xl font-semibold text-yellow-400; }
+strong { @apply font-mono font-normal text-orange-100; }
+ul { @apply list-disc list-inside mb-4; }

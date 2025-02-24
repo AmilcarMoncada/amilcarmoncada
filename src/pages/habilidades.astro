@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro"
+import CodeIcon from "../components/icons/Code.astro"
+import Skills from "../components/Skills.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+import TitleSection from "../components/TitleSection.astro"
+import "../styles/global.css";
+
+import { skills } from '../content/data/db'
+---
+
+<Layout
+  title="Amilcar Moncada - Habilidades"
+  description="Todas las tecnologias utilizadas"
+>
+  <main class="px-4">
+      <SectionContainer id="habilidades" class=" md:py-22">
+        <TitleSection>
+        <CodeIcon class="size-10" />
+        Habilidades
+      </TitleSection>
+        <Skills 
+        name=""
+        skills={skills}
+      />
+      </SectionContainer>
+  </main>
+</Layout>

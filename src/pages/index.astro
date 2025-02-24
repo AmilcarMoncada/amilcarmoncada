@@ -1,26 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import AboutMe from "../components/AboutMe.astro"
-import Briefcase from "../components/icons/Briefcase.astro"
-import CodeIcon from "../components/icons/Code.astro"
-import Experience from "../components/Experience.astro"
-import Projects from "../components/Projects.astro"
-import Skills from "../components/Skills.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import Hero from "../components/Hero.astro"
-import TitleSection from "../components/TitleSection.astro"
 import "../styles/global.css";
 
-import { info, skills } from '../content/data/db'
+import { info, Footerss } from '../content/data/db'
 ---
 
 
 <Layout
-  title="Porfolio de Amilcar Moncada"
+  title="Amilcar Moncada - Portafolio"
   description="Portafolio profesional, ademas de ser un proyecto de la clase de Sistemas Expertos"
 >
   <main class="px-4">
-    <SectionContainer id="inicio" class=" md:py-22">
+    <SectionContainer id="inicio" class="md:py-22">
       <Hero>
       </slot>
     </Hero>
@@ -29,7 +23,7 @@ import { info, skills } from '../content/data/db'
     <SectionContainer id="sobre-mi" >
     <div class="space-y-24">
       {
-        info.map((card, index) => (
+        info.map((card) => (
           <AboutMe
             title={card.title}
             text={card.text}
@@ -39,35 +33,6 @@ import { info, skills } from '../content/data/db'
         ))
       }
       </SectionContainer>
-
-      <SectionContainer id="habilidades" class=" md:py-22">
-        <TitleSection>
-        <CodeIcon class="size-8" />
-        Habilidades
-      </TitleSection>
-        <Skills 
-        name=""
-        skills={skills}
-      />
-      </SectionContainer>
-    
-      <SectionContainer id="experiencia">
-        <TitleSection>
-          <Briefcase class="size-8" />
-          Experiencia laboral
-        </TitleSection>
-        <Experience />
-      </SectionContainer>
-
-      <SectionContainer id="proyectos">
-        <TitleSection>
-          <CodeIcon class="size-7" />
-          Proyectos
-        </TitleSection>
-        <Projects />
-      </SectionContainer>
-
-
 
   </div>
   </main>

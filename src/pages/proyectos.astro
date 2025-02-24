@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Project from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import TitleSection from "../components/TitleSection.astro";
+import Square from "../components/icons/Square.astro"
+
+---
+
+<Layout
+  title="Amilcar Moncada - Proyectos"
+  description="Proyectos realizados a lo largo de mi carrera profesional"
+>
+  <main class="px-4">
+
+    <SectionContainer id="proyectos" class="md:py-22">
+      <TitleSection>
+        <Square class="size-10" />
+        Proyectos
+      </TitleSection>
+      <Project />
+    </SectionContainer>
+
+  </main>
+</Layout>

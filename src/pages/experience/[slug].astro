@@ -1,0 +1,47 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+type Experiencia = CollectionEntry<'experiencia'> & {
+  render: () => Promise<{ Content: any; headings: any[] }>
+} & { slug: string };
+
+
+export async function getStaticPaths() {
+  const experienciaEntries: Experiencia[] = await getCollection('experiencia');
+  return experienciaEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+interface Props {
+  entry: Experiencia;
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+---
+
+<Layout title={`Amílcar Moncada - ${entry.data.title} `} description="Proyectos realizados a lo largo de mi carrera profesional">
+  <div class="max-w-4xl mx-auto px-4 py-20">
+    <h1 class="flex items-center mb-12 text-4xl font-semibold gap-x-4 text-black/80 dark:text-white">{entry.data.title}</h1>
+    <p class="mt-8 text-xl text-gray-800 dark:text-gray-300 mb-8" set:html={entry.data.description}></p>
+
+    <nav class="mb-12 bg-gray-900 p-4 rounded-xl">
+      <p class="flex dark:text-yellow-300 items-center mb-4 text-3xl font-semibold gap-x-4 font-mono">Información</p>
+      <ul class="space-y-2">
+        {headings.map((heading: any) => (
+          <li class={`toc-level-${heading.depth} ml-${(heading.depth - 1) * 4} dark:text-yellow-300`}>
+            <a href={`#${heading.slug}`} class="text-xl dark:text-yellow-100 font-normal font-mono">
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <article class="mt-8 text-xl text-gray-800 dark:text-gray-300 mb-8">
+      <Content />
+    </article>
+  </div>
+</Layout>

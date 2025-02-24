@@ -6,18 +6,10 @@ export interface InfoProps {
     icon: string;
 }
 
-export interface CardIndexProps {
+export interface ModulosProps {
     title: string;
-    title_en: string;
-    description: string;
-    description_en: string;
-}
-
-export interface ItemProps {
-    titleEs: string;
-    titleEn: string;
-    href: string;
-    subitems?: ItemProps[];
+    label: string;
+    url: string;
 }
 
 interface Skill {
@@ -46,28 +38,23 @@ interface tag {
     name: string
     class: string
     icon: any
-
 }
 
 export interface Tags  {
     [name: string]: tag;
 }
 
-export interface Proyects {
+export interface Projects {
     title: string
     description: string
-    link: string
+    link?: string
     github?: string
     image: string
-    tags: Tags[]
+    tags?: tag[]
 }
 
-export interface WorkExperienceItem {
-    title: string;
-    titleEN: string;
-    company: string;
-    period: string;
-    description: string[];
-    descriptionEN: string[];
-    technologies: string[];
-  }
+export interface FooterProps {
+    name: string;
+    url: string;
+    icon: any;
+}
