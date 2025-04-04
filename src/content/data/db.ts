@@ -17,6 +17,8 @@ import Numpy from "../../components/icons/Numpy.astro"
 import WhatsApp from "../../components/icons/Whats.astro"
 import LinkedIn from "../../components/icons/LinkedIn.astro"
 import GitHub from "../../components/icons/GitHub.astro"
+import Azure from "../../components/icons/Azure.astro"
+import Terraform from "../../components/icons/Terraform.astro"
 import type  { Projects, InfoProps, Skills, Tags, ModulosProps, FooterProps} from '../../interfaces/Interface';
 import Javascript from "../../components/icons/Javascript.astro"
 
@@ -24,7 +26,7 @@ export const info: InfoProps[] = [
     {
       title: 'Sobre mi',
       text: ` <p class="dark:[&>strong]:text-yellow-200  [&>strong]:font-bold ">
-      Mi nombre es <strong>Amílcar José Moncada Vásquez</strong>, soy <strong>Hondureño</strong> y tengo <strong>20 años</strong>.
+      Mi nombre es <strong>Amílcar José Moncada Vásquez</strong>, soy <strong>Hondureño</strong> y tengo <strong>21 años</strong>.
     </p>
 
     <p>
@@ -210,6 +212,16 @@ const TAGS: Tags = {
       name: "Pandas",
       class: "bg-black text-white",
       icon: Pandas,
+    },
+    TERRAFORM: {
+      name: "Terraform",
+      class: "bg-black text-white",
+      icon: Terraform,
+    },
+    AZURE: {
+      name: "Azure",
+      class: "bg-black text-white",
+      icon: Azure,
     }
 };
 
@@ -272,7 +284,23 @@ export const Proyectos: Projects[] = [
     link: "https://github.com/AmilcarMoncada/ProyectoPinterest-Frontend",
     image: "/images/Pinterest.png",
     tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL]
-  }];
+  },
+  {
+    title: "Servicios y arquitectura en la nube",
+    description:
+     ` <p>Este proyecto esta enfocado en como, mediante servicios como <strong>Terraform</strong> que permite automatizar
+     conceptos y <strong>Azure</strong> que al ser una nube publica, me permite alojar y administrar aplicaciones las cuales se enfocan en 
+     una infraestructura global de un sistema, incluyendo cualquier tipo de recurso el cual puede ser alojado en Azure.</p>
+    <br>
+    <p>Con el uso de <strong>Terraform</strong> se propone una infraestructura enfocada en una aplicación contable con diferentes especificaciones como ser contenido estático,
+    facilitar dos aplicaciones web distintas para los usuarios (pública y administrativa), manejar tareas en segundo plano, 
+    almacenamiento de archivos y aceleras las consultas más frecuentes-</p>`,
+    github: "https://github.com/AmilcarMoncada/Repositorio_A_Ecommerce",
+    link: "https://github.com/AmilcarMoncada/Repositorio_B_Ecommerce",
+    image: "/images/Infraestructura.png",
+    tags: [TAGS.AZURE, TAGS.TERRAFORM]
+  }
+];
 
 
   export const Footerss: FooterProps[] = [
