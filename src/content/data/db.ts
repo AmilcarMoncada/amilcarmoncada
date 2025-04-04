@@ -294,7 +294,7 @@ export const Proyectos: Projects[] = [
     <br>
     <p>Con el uso de <strong>Terraform</strong> se propone una infraestructura enfocada en una aplicación contable con diferentes especificaciones como ser contenido estático,
     facilitar dos aplicaciones web distintas para los usuarios (pública y administrativa), manejar tareas en segundo plano, 
-    almacenamiento de archivos y aceleras las consultas más frecuentes-</p>`,
+    almacenamiento de archivos y aceleras las consultas más frecuentes.</p>`,
     github: "https://github.com/AmilcarMoncada/Repositorio_A_Ecommerce",
     link: "https://github.com/AmilcarMoncada/Repositorio_B_Ecommerce",
     image: "/images/Infraestructura.png",
