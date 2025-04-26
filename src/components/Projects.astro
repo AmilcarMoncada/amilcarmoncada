@@ -1,55 +1,56 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-import { Proyectos } from '../content/data/db';
+import GitHub from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import { Proyectos } from "../content/data/db";
 ---
 
 <div class="flex flex-col gap-y-20">
   {
     Proyectos.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-Xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-Xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img src={image} />
+          </div>
+          <footer class="flex flex-wrap items-end justify-start mt-4 gap-2">
+            {github?.map((url) => (
+              <LinkButton href={url} key={url}>
+                <GitHub class="size-6" />
+                GitHub
+              </LinkButton>
+            ))}
+            {link?.map((url) => (
+              <LinkButton href={url} key={url}>
+                <Link class="size-4" />
+                Página
+              </LinkButton>
+            ))}
+          </footer>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-        <p class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-          {title}
-        </p>
-        <div class="flex flex-wrap mt-4">
-          <ul class="flex flex-row mb-3 gap-x-2">
-            {tags?.map((tag) => (
-              <p>
-                <span class={`flex gap-x-1 rounded-full text-xs ${tag.class} py-1 px-2`}>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <p class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </p>
+          <div class="flex flex-wrap mt-4 gap-x-2">
+            <ul class="flex flex-wrap mb-3 gap-x-2 mt-2">
+              {tags?.map((tag) => (
+                <span
+                  class={`flex gap-x-1 rounded-full text-xs ${tag.class} py-1 px-2`}
+                >
                   <tag.icon class="size-4" />
                   {tag.name}
                 </span>
-              </p>
-            ))}
-          </ul>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mt-2 text-gray-700 dark:text-gray-400 dark:[&>strong]:text-yellow-200">
+            <p set:html={description} />
+          </div>
         </div>
-
-      <div class="mt-2 text-gray-700 dark:text-gray-400 dark:[&>strong]:text-yellow-200"><p set:html={description}></p></div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              GitHub
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Página
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-</article>
-    ))}
+      </article>
+    ))
+  }
 </div>
-
-

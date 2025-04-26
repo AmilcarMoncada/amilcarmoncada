@@ -21,6 +21,9 @@ import Azure from "../../components/icons/Azure.astro"
 import Terraform from "../../components/icons/Terraform.astro"
 import type  { Projects, InfoProps, Skills, Tags, ModulosProps, FooterProps} from '../../interfaces/Interface';
 import Javascript from "../../components/icons/Javascript.astro"
+import Blob from "../../components/icons/Blob.astro"
+import Function from "../../components/icons/Function.astro"
+import Fastapi from "../../components/icons/Fastapi.astro"
 
 export const info: InfoProps[] = [
     {
@@ -222,12 +225,53 @@ const TAGS: Tags = {
       name: "Azure",
       class: "bg-black text-white",
       icon: Azure,
-    }
+    },
+    BLOB: {
+      name: "Blob Storage",
+      class: "bg-black text-white",
+      icon: Blob,
+    },
+    FUNCTION: {
+      name: "Function App",
+      class: "bg-black text-white",
+      icon: Function,
+    },
+    FASTAPI: {
+      name: "FastAPI",
+      class: "bg-black text-white",
+      icon: Fastapi,
+    },
 };
 
 
 export const Proyectos: Projects[] = [
-  
+  {
+    title: "Generador de Reportes PokeApi",
+    description:
+     `<p>Este proyecto está enfocado en la generación de reportes personalizados sobre <strong>Pokémon</strong> utilizando tecnologías modernas como <strong>Next.js</strong>, <strong>FastAPI</strong> y <strong>Azure</strong>, lo cual permite construir una solución escalable, integrando servicios como funciones en la nube, almacenamiento de archivos y bases de datos SQL.</p>
+<br>
+<p>Se implementaron funcionalidades clave como la <strong>eliminación completa de reportes</strong> desde la interfaz hasta el almacenamiento en la nube, la <strong>enriquecimiento de los reportes</strong> con estadísticas y habilidades detalladas de cada Pokémon utilizando la <strong>PokeAPI</strong>, y la opción de generar reportes con <strong>muestreo aleatorio</strong> para controlar la cantidad de registros generados.</p>
+`,
+    github: ["https://github.com/AmilcarMoncada/RepositorioA_UI", "https://github.com/AmilcarMoncada/RepositorioB_API", "https://github.com/AmilcarMoncada/RepositorioC_FunctionApp", "https://github.com/AmilcarMoncada/RepositorioD_SQL", "https://github.com/AmilcarMoncada/RepositorioE_Terraform"],
+    link: ["https://ui-pokemonqueue-dev.azurewebsites.net/", "https://api-pokemonqueue-dev.azurewebsites.net/"],
+    image: "/images/PokeAPI.jpg",
+    tags: [TAGS.AZURE, TAGS.TERRAFORM, TAGS.NODE, TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.JAVASCRIPT, TAGS.PYTHON, TAGS.FASTAPI, TAGS.BLOB, TAGS.FUNCTION]
+  },
+  {
+    title: "Servicios y arquitectura en la nube",
+    description:
+     ` <p>Este proyecto esta enfocado en como, mediante servicios como <strong>Terraform</strong> que permite automatizar
+     conceptos y <strong>Azure</strong> que al ser una nube publica, me permite alojar y administrar aplicaciones las cuales se enfocan en 
+     una infraestructura global de un sistema, incluyendo cualquier tipo de recurso el cual puede ser alojado en Azure.</p>
+    <br>
+    <p>Con el uso de <strong>Terraform</strong> se propone una infraestructura enfocada en una aplicación contable con diferentes especificaciones como ser contenido estático,
+    facilitar dos aplicaciones web distintas para los usuarios (pública y administrativa), manejar tareas en segundo plano, 
+    almacenamiento de archivos y aceleras las consultas más frecuentes.</p>`,
+    github: ["https://github.com/AmilcarMoncada/Repositorio_A_Ecommerce"],
+    link: ["https://github.com/AmilcarMoncada/Repositorio_B_Ecommerce"],
+    image: "/images/Infraestructura.png",
+    tags: [TAGS.AZURE, TAGS.TERRAFORM]
+  },
   {
     title: "Congreso de Innovación y Tecnologias UNAH 2025",
     description:
@@ -238,7 +282,7 @@ export const Proyectos: Projects[] = [
       <p>Como parte del <strong>backend</strong>, mi responsabilidad fue asegurar que las interacciones
       con la base de datos fueran rápidas, seguras y escalables,
       contribuyendo a una experiencia de usuario fluida.</p>`,
-    link: "https://congresoinnovacionunah2025.com/",
+    link: ["https://congresoinnovacionunah2025.com/"],
     image: "/images/Congreso.jpg",
     tags: [TAGS.NODE, TAGS.TYPESCRIPT, TAGS.EXPRESS, TAGS.SUPABASE, TAGS.REACT, TAGS.JAVASCRIPT]
   },{
@@ -254,7 +298,7 @@ export const Proyectos: Projects[] = [
     técnicas e integrar <strong>APIs externas</strong>, lo que seria valioso para
     roles de desarrollo web en empresas que requieren soluciones escalables e integradas. `
     ,
-    github: "https://github.com/MoralesGuillermo/SimuladorUber",
+    github: ["https://github.com/MoralesGuillermo/SimuladorUber"],
     image: "/images/zorrito.png",
     tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL]
   },
@@ -268,7 +312,7 @@ export const Proyectos: Projects[] = [
        
        <p>Desempeñé el rol de <strong>desarrollador y responsable</strong> del modelo, me encargué de todo el proceso 
        de recolección y limpieza de datos hasta la <strong>creación y entrenamiento del modelo</strong>.</p>`,
-       github: "https://github.com/dme2002/Modelo_Fatiga_Muscular",
+       github: ["https://github.com/dme2002/Modelo_Fatiga_Muscular"],
     image: "/images/coil.png",
     tags: [TAGS.PYTHON, TAGS.PANDAS, TAGS.LEARN, TAGS.NUMPY]
   },
@@ -280,25 +324,10 @@ export const Proyectos: Projects[] = [
     <br>
     <p>Fui el desarrollador principal, desde la estructura de la base de datos, implementación de la interfaz de usuario 
     y la creación de una <strong>API REST con Springboot</strong>.</p>`,
-    github: "https://github.com/AmilcarMoncada/ProyectoPinterestBackend",
-    link: "https://github.com/AmilcarMoncada/ProyectoPinterest-Frontend",
+    github: ["https://github.com/AmilcarMoncada/ProyectoPinterestBackend"],
+    link: ["https://github.com/AmilcarMoncada/ProyectoPinterest-Frontend"],
     image: "/images/Pinterest.png",
     tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL]
-  },
-  {
-    title: "Servicios y arquitectura en la nube",
-    description:
-     ` <p>Este proyecto esta enfocado en como, mediante servicios como <strong>Terraform</strong> que permite automatizar
-     conceptos y <strong>Azure</strong> que al ser una nube publica, me permite alojar y administrar aplicaciones las cuales se enfocan en 
-     una infraestructura global de un sistema, incluyendo cualquier tipo de recurso el cual puede ser alojado en Azure.</p>
-    <br>
-    <p>Con el uso de <strong>Terraform</strong> se propone una infraestructura enfocada en una aplicación contable con diferentes especificaciones como ser contenido estático,
-    facilitar dos aplicaciones web distintas para los usuarios (pública y administrativa), manejar tareas en segundo plano, 
-    almacenamiento de archivos y aceleras las consultas más frecuentes.</p>`,
-    github: "https://github.com/AmilcarMoncada/Repositorio_A_Ecommerce",
-    link: "https://github.com/AmilcarMoncada/Repositorio_B_Ecommerce",
-    image: "/images/Infraestructura.png",
-    tags: [TAGS.AZURE, TAGS.TERRAFORM]
   }
 ];
 

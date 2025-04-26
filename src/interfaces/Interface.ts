@@ -47,8 +47,8 @@ export interface Tags  {
 export interface Projects {
     title: string
     description: string
-    link?: string
-    github?: string
+    link?: string[]
+    github?: string[]
     image: string
     tags?: tag[]
 }
